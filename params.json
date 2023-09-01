@@ -1,0 +1,19 @@
+"168181578692748498" "REQ0001772" "Передача оборудования на склад" "169235615794406532" 10 "167336169892393233" "монитор lenovo t2254p 22" "V3001MT1" "RU751K0102" "руководитель отдела" "00010063" "Radchenko Artem" "RU751OPR41"
+
+//warhouse params
+
+[b'app.py',
+  b'warehouse',
+  b'lenovo l15gen2',
+  b'PF37W6M3',
+  b'RU751DG503',
+  b'\xd0\xbf\xd1\x80\xd0\xbe\xd0\xb3\xd1\x80\xd0\xb0\xd0\xbc\xd0\xbc\xd0\xb8\xd1\x81\xd1\x82',
+  b'00010461',
+  b'Andryuschenko Valeriy',
+  b'RU751OPR43'
+]
+
+{"equipment":"168181671992833571","number":"REQ0001797","subject":"Изменение владельца оборудования","request":"169269721891431805","status":10,"caller":"167336347298112757","name":"lenovo l15gen2","serial_number":"PF37W6M3","cost_center_caller":"RU751DG503","job_title":"программист","personnel_number":"00010461","fio":"Andryuschenko Valeriy","type_act":"employee","new_owner_cost_center_caller":"RU751DW102","new_owner_job_title":"Вентра","new_owner_personnel_number":"no","new_owner_fio":"Makhinov Maksim"}
+
+"employee" "lenovo l15gen2" "PF37W6M3" "RU751DG503" "программист" "00010461" "Andryuschenko Valeriy" "RU751DW102" "Вентра" "no" "Makhinov Maksim"
+
