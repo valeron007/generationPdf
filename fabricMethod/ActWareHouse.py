@@ -18,6 +18,18 @@ class ActWareHouse(act.Act):
         self.act["fio"] = self.params[7]
         self.act["warehouse"] = self.params[8]
 
+    def setActPdf(self):
+        try:
+            self.act_pdf["Модель"] = self.params[2]
+            self.act_pdf["serial_number"] = self.params[3] if self.params[3] != "no" else ""
+            self.act_pdf["personnel_number"] = self.params[4] if self.params[4] != "no" else ""
+            self.act_pdf["Должность"] = self.params[5] if self.params[5] != "no" else ""
+            self.act_pdf["Personnel"] = self.params[6] if self.params[6] != "no" else ""
+            self.act_pdf["initials"] = self.params[7]
+            self.act_pdf["Табельный номер отдела"] = self.params[8] if self.params[8] != "no" else ""
+        except BaseException as e:
+            print(e)
+
     def getValueField(self, name):
         if name == 'Модель':
             return self.act["name"] if 'name' in self.act else ""

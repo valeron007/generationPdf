@@ -3,6 +3,7 @@
 class Act(object):
     def __init__(self):
         self.act = {}
+        self.act_pdf = {}
     def show(self):
         raise NotImplementedError()
 

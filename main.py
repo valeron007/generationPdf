@@ -4,7 +4,7 @@ import json
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 from PyPDF4.pdf import PdfFileReader, PdfFileWriter
-from PyPDF4.generic import NameObject, BooleanObject
+from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
 from PyPDF4.generic import TextStringObject
 import sys
 import base64
@@ -33,6 +33,7 @@ if __name__ == '__main__':
         app = myapplication.MyApplication()
         act_pdf = app.create_document(sys.argv[1], [x for x in sys.argv])  # Open document format
         act_pdf.setAct()
+        act_pdf.setActPdf()
 
         writer = PdfFileWriter()
         reader = PdfFileReader("template2.pdf", strict=False)
@@ -43,13 +44,25 @@ if __name__ == '__main__':
                 {NameObject("/NeedAppearances"): BooleanObject(True)}
             )
 
-        writer.appendPagesFromReader(reader)
+        catalog = writer._root_object
+        if "/AcroForm" not in catalog:
+            writer._root_object.update({
+                NameObject("/AcroForm"): IndirectObject(len(writer._objects), 0, writer)})
+
+        need_appearances = NameObject("/NeedAppearances")
+        writer._root_object["/AcroForm"][need_appearances] = BooleanObject(True)
+
         if "/AcroForm" in writer._root_object:
             writer._root_object["/AcroForm"].update(
-                {NameObject("/NeedAppearances"): BooleanObject(True)}
-            )
-        writer._info = reader.trailer["/Info"]
-        reader_trailer = reader.trailer["/Root"]
+                {NameObject("/NeedAppearances"): BooleanObject(True)})
+
+        writer.appendPagesFromReader(reader)
+
+        #writer._info = reader.trailer["/Info"]
+        #info = reader.trailer["/Info"]
+        #reader_trailer = reader.trailer["/Root"]
+
+        """
         writer._root_object.update(
             {
                 key: reader_trailer[key]
@@ -57,15 +70,16 @@ if __name__ == '__main__':
                 if key in ("/AcroForm", "/Lang", "/MarkInfo")
             }
         )
-        page = writer.getPage(0)
-        # writer.add_page(page)
+        """
 
-        # text = page.extract_text()
+        """
+        page = writer.getPage(0)
+
         fields = reader.getFields()
         annot = page['/Annots']
         # objects = reader.resolved_objects
         # dictionary = reader.get_form_text_fields()
-
+        
         for annot in page["/Annots"]:
             writer_annot = annot.getObject()
             field = writer_annot["/T"]
@@ -87,8 +101,10 @@ if __name__ == '__main__':
                             NameObject("/V"): TextStringObject(value),
                         }
                     )
-
+        """
         # print(text)
+
+        writer.updatePageFormFieldValues(writer.getPage(0), act_pdf.act_pdf)
 
         with open("1.pdf", "wb") as f:
             writer.write(f)
