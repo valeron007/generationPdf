@@ -32,6 +32,9 @@ class ActEmployee(act.Act):
             self.act_pdf["tenure"] = self.params[9] if self.params[9] != "no" else ""
             self.act_pdf["receiving"] = self.params[10] if self.params[10] != "no" else ""
             self.act_pdf["receivingInitials"] = self.params[11] if self.params[11] != "no" else ""
+            self.act_pdf["inv_number"] = self.params[12] if self.params[12] != "no" else ""
+            self.act_pdf["cost"] = self.params[13] if self.params[13] != "no" else ""
+            self.act_pdf["act_date"] = self.params[14]
         except BaseException as e:
             print(e)
     def setAct(self):
@@ -46,6 +49,9 @@ class ActEmployee(act.Act):
             self.act["new_owner_job_title"] = self.params[9] if self.params[9] != "no" else ""
             self.act["new_owner_personnel_number"] = self.params[10] if self.params[10] != "no" else ""
             self.act["new_owner_fio"] = self.params[11] if self.params[11] != "no" else ""
+            self.act["inv_number"] = self.params[12] if self.params[12] != "no" else ""
+            self.act["initial_cost"] = self.params[13] if self.params[13] != "no" else ""
+            self.act["act_date"] = self.params[14]
         except BaseException as e:
             print(e)
 
