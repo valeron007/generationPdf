@@ -28,3 +28,9 @@ class Act(object):
             return self.act['new_owner_job_title'] if 'new_owner_job_title' in self.act else ""
         elif name == 'receiving':
             return self.act['new_owner_personnel_number'] if 'new_owner_personnel_number' in self.act else ""
+        elif name == 'inv_number':
+            return self.act['inv_number'] if 'inv_number' in self.act else ""
+        elif name == 'cost':
+            return self.act['initial_cost'] if 'initial_cost' in self.act else ""
+        elif name == 'act_date':
+            return self.act['act_date'] if 'act_date' in self.act else ""

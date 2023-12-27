@@ -1,7 +1,7 @@
 # coding: utf-8
 import fabricMethod.Act as act
 
-class ActWareHouse(act.Act):
+class ActFromWarehouse(act.Act):
     def __init__(self, param_act):
         super().__init__()
         self.params = param_act
@@ -25,11 +25,11 @@ class ActWareHouse(act.Act):
         try:
             self.act_pdf["Модель"] = self.params[2]
             self.act_pdf["serial_number"] = self.params[3] if self.params[3] != "no" else ""
-            self.act_pdf["personnel_number"] = self.params[4] if self.params[4] != "no" else ""
-            self.act_pdf["Должность"] = self.params[5] if self.params[5] != "no" else ""
-            self.act_pdf["Personnel"] = self.params[6] if self.params[6] != "no" else ""
-            self.act_pdf["initials"] = self.params[7]
-            self.act_pdf["Табельный номер отдела"] = self.params[8] if self.params[8] != "no" else ""
+            self.act_pdf["Табельный номер отдела"] = self.params[4] if self.params[4] != "no" else ""
+            self.act_pdf["tenure"] = self.params[5] if self.params[5] != "no" else ""
+            self.act_pdf["receiving"] = self.params[6] if self.params[6] != "no" else ""
+            self.act_pdf["receivingInitials"] = self.params[7]
+            self.act_pdf["personnel_number"] = self.params[8] if self.params[8] != "no" else ""
             self.act_pdf["inv_number"] = self.params[9] if self.params[9] != "no" else ""
             self.act_pdf["cost"] = self.params[10] if self.params[10] != "no" else ""
             self.act_pdf["act_date"] = self.params[11]
@@ -42,21 +42,21 @@ class ActWareHouse(act.Act):
         elif name == 'serial_number':
             return self.act['serial_number'] if 'serial_number' in self.act else ""
         elif name == 'initials':
-            return self.act['fio'] if 'fio' in self.act else ""
-        elif name == 'receivingInitials':
             return self.act['new_owner_fio'] if 'new_owner_fio' in self.act else ""
+        elif name == 'receivingInitials':
+            return self.act['fio'] if 'fio' in self.act else ""
         elif name == 'personnel_number':
-            return self.act['cost_center_caller'] if 'cost_center_caller' in self.act else ""
-        elif name == 'Табельный номер отдела':
             return self.act['warehouse'] if 'warehouse' in self.act else ""
+        elif name == 'Табельный номер отдела':
+            return self.act['cost_center_caller'] if 'cost_center_caller' in self.act else ""
         elif name == 'Должность':
-            return self.act['job_title'] if 'job_title' in self.act else ""
-        elif name == 'Personnel':
-            return self.act['personnel_number'] if 'personnel_number' in self.act else ""
-        elif name == 'tenure':
             return self.act['new_owner_job_title'] if 'new_owner_job_title' in self.act else ""
-        elif name == 'receiving':
+        elif name == 'Personnel':
             return self.act['new_owner_personnel_number'] if 'new_owner_personnel_number' in self.act else ""
+        elif name == 'tenure':
+            return self.act['job_title'] if 'job_title' in self.act else ""
+        elif name == 'receiving':
+            return self.act['personnel_number'] if 'personnel_number' in self.act else ""
         elif name == 'inv_number':
             return self.act['inv_number'] if 'inv_number' in self.act else ""
         elif name == 'cost':
