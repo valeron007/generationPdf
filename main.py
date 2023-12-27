@@ -57,21 +57,6 @@ if __name__ == '__main__':
                 {NameObject("/NeedAppearances"): BooleanObject(True)})
 
         writer.appendPagesFromReader(reader)
-
-        #writer._info = reader.trailer["/Info"]
-        #info = reader.trailer["/Info"]
-        #reader_trailer = reader.trailer["/Root"]
-
-        """
-        writer._root_object.update(
-            {
-                key: reader_trailer[key]
-                for key in reader_trailer
-                if key in ("/AcroForm", "/Lang", "/MarkInfo")
-            }
-        )
-        """
-
         """
         page = writer.getPage(0)
 
@@ -102,8 +87,6 @@ if __name__ == '__main__':
                         }
                     )
         """
-        # print(text)
-
         writer.updatePageFormFieldValues(writer.getPage(0), act_pdf.act_pdf)
 
         with open("1.pdf", "wb") as f:
