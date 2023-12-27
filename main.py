@@ -89,10 +89,10 @@ if __name__ == '__main__':
         """
         writer.updatePageFormFieldValues(writer.getPage(0), act_pdf.act_pdf)
 
-        with open("1.pdf", "wb") as f:
+        with open("templates/1.pdf", "wb") as f:
             writer.write(f)
 
-        with open("1.pdf", "rb") as pdfFile:
+        with open("templates/1.pdf", "rb") as pdfFile:
             pdf_encode = base64.b64encode(pdfFile.read()).decode('utf-8')
 
         result = {}
