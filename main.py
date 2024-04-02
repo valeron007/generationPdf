@@ -13,13 +13,13 @@ import fabricMethod.MyApplication as myapplication
 """
     поля для заполнения
     |имя поля в файле | имя поля в самой форме
-    1. наименование оборудования | модель
+    1. наименование оборудования | model
     2. Серийный номер | serial_number
     3. принимаемого в эксплуатацию от отдела | personnel_number
-    4. отделу | Табельный номер отдела
+    4. отделу | tabel_number
     5. имеет инвентарный номер | inv_number
     6. персональная стоимость | cost
-    7. должность | Должность
+    7. должность | job_title
     8. должность(принимающего) | tenure
     9. Табельный номер | Personnel
     10. Табельный номер | receiving
@@ -36,9 +36,9 @@ if __name__ == '__main__':
         act_pdf.setActPdf()
 
         writer = PdfFileWriter()
-        reader = PdfFileReader("template2.pdf", strict=False)
-        # number_of_pages = len(reader.pages)
-        # page = reader.pages[0]
+        #original template2.pdf
+        reader = PdfFileReader("\\template\\main.pdf", strict=False)
+
         if "/AcroForm" in reader.trailer["/Root"]:
             reader.trailer["/Root"]["/AcroForm"].update(
                 {NameObject("/NeedAppearances"): BooleanObject(True)}
@@ -57,52 +57,6 @@ if __name__ == '__main__':
                 {NameObject("/NeedAppearances"): BooleanObject(True)})
 
         writer.appendPagesFromReader(reader)
-
-        #writer._info = reader.trailer["/Info"]
-        #info = reader.trailer["/Info"]
-        #reader_trailer = reader.trailer["/Root"]
-
-        """
-        writer._root_object.update(
-            {
-                key: reader_trailer[key]
-                for key in reader_trailer
-                if key in ("/AcroForm", "/Lang", "/MarkInfo")
-            }
-        )
-        """
-
-        """
-        page = writer.getPage(0)
-
-        fields = reader.getFields()
-        annot = page['/Annots']
-        # objects = reader.resolved_objects
-        # dictionary = reader.get_form_text_fields()
-        
-        for annot in page["/Annots"]:
-            writer_annot = annot.getObject()
-            field = writer_annot["/T"]
-
-            if writer_annot["/FT"] == "/Btn":
-                value = act_pdf.getValueField(writer_annot['/TU'])
-                if value != None:
-                    writer_annot.update(
-                        {
-                            NameObject("/AS"): NameObject("/On"),
-                            NameObject("/V"): NameObject("/On"),
-                        }
-                    )
-            elif writer_annot["/FT"] == "/Tx":
-                value = act_pdf.getValueField(writer_annot['/T'])
-                if value != None:
-                    writer_annot.update(
-                        {
-                            NameObject("/V"): TextStringObject(value),
-                        }
-                    )
-        """
-        # print(text)
 
         writer.updatePageFormFieldValues(writer.getPage(0), act_pdf.act_pdf)
 
