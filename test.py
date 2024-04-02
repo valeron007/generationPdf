@@ -52,6 +52,6 @@ writer.add_page(reader.pages[0])
 
 writer.update_page_form_field_values(writer.pages[0], act_pdf.act_pdf)
 
-with open("1.pdf", "wb") as fp:
+with open("templates/1.pdf", "wb") as fp:
     writer.write(fp)
 
