@@ -5,3 +5,9 @@ DEBUG:root:Sample dict log: 'number'
 DEBUG:root:params: ['main.py', 'warehouse', 'thinkvision e24q-20', 'V5DWR916', 'RU751DG503', '\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442', '00010461', 'Andryuschenko Valeriy', 'RU751OPR43', '126955', '16398,98', '02.04.2024', 'REQ0005285']
 DEBUG:root:Sample dict log: 'number'
 DEBUG:root:Sample dict log: 'charmap' codec can't encode characters in position 75-85: character maps to <undefined>
+DEBUG:root:params: ['main.py', 'warehouse', 'thinkvision e24q-20', 'V5DWR916', 'RU751DG503', '\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442', '00010461', 'Andryuschenko Valeriy', 'RU751OPR43', '126955', '16398,98', '03.04.2024', 'REQ0005297']
+DEBUG:root:Sample dict log: 'number'
+DEBUG:root:params: ['main.py', 'warehouse', 'thinkvision e24q-20', 'V5DWR916', 'RU751DG503', '\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442', '00010461', 'Andryuschenko Valeriy', 'RU751OPR43', '126955', '16398,98', '03.04.2024', 'REQ0005298']
+DEBUG:root:Sample dict log: 'number'
+DEBUG:root:act: {'name': 'thinkvision e24q-20', 'serial_number': 'V5DWR916', 'cost_center_caller': 'RU751DG503', 'job_title': '\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442', 'personnel_number': '00010461', 'fio': 'Andryuschenko Valeriy', 'warehouse': 'RU751OPR43', 'inv_number': '126955', 'initial_cost': '16398,98', 'act_date': '03.04.2024'}
+DEBUG:root:Sample dict log: 'number'

@@ -20,6 +20,7 @@ class ActWareHouse(act.Act):
         self.act["inv_number"] = self.params[9] if self.params[9] != "no" else ""
         self.act["initial_cost"] = self.params[10] if self.params[10] != "no" else ""
         self.act["act_date"] = self.params[11]
+        self.act["number"] = self.params[12] if self.params[12] != "no" else ""
 
     def setActPdf(self):
         try:

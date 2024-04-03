@@ -31,12 +31,11 @@ if __name__ == '__main__':
     try:
         app = myapplication.MyApplication()
         act_pdf = app.create_document(sys.argv[1], [x for x in sys.argv])  # Open document format
-
-        logging.basicConfig(level=logging.DEBUG, filename='error.log')
-        logging.debug('params: %s', act_pdf.params)
-
         act_pdf.setAct()
         act_pdf.setActPdf()
+        logging.basicConfig(level=logging.DEBUG, filename='error.log')
+        logging.debug('param: %s', act_pdf.params)
+        logging.debug('act: %s', act_pdf.act)
 
         fillPdf = fill.FillPdf(act_pdf)
         fillPdf.create_folder()
@@ -79,7 +78,7 @@ if __name__ == '__main__':
         print(content)
     except BaseException as e:
         logging.basicConfig(level=logging.DEBUG, filename='error.log')
-        logging.debug('Sample dict log: %s', e)
+        logging.debug('error: %s', e)
         print(e)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
