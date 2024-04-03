@@ -18,7 +18,7 @@ class FillPdf:
     def copy_empty_template(self):
         shutil.copyfile(config.path_template + "main.pdf", config.path_template + self.act_data.act['number'] + "\\main.pdf")
 
-
+    #field form and save document
     def fill_template(self):
         self.setUpdateRoot()
         self.catalog = self.writer._root_object
@@ -53,7 +53,7 @@ class FillPdf:
             self.writer.write(f)
 
     def getPdfBaseEncode(self):
-        with open("1.pdf", "rb") as pdfFile:
+        with open(config.path_template + self.act_data.act['number'] + "\\main.pdf", "rb") as pdfFile:
             pdf_encode = base64.b64encode(pdfFile.read()).decode('utf-8')
 
         return pdf_encode

@@ -40,7 +40,9 @@ if __name__ == '__main__':
         '''
         fillPdf = fill.FillPdf(act_pdf)
         fillPdf.create_folder()
+        fillPdf.copy_empty_template()
         fillPdf.fill_template()
+        fillPdf.writePdf()
 
         writer = PdfFileWriter()
         #original template2.pdf

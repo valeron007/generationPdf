@@ -24,13 +24,13 @@ class ActWareHouse(act.Act):
 
     def setActPdf(self):
         try:
-            self.act_pdf["Модель"] = self.params[2]
+            self.act_pdf["model"] = self.params[2]
             self.act_pdf["serial_number"] = self.params[3] if self.params[3] != "no" else ""
             self.act_pdf["personnel_number"] = self.params[4] if self.params[4] != "no" else ""
-            self.act_pdf["Должность"] = self.params[5] if self.params[5] != "no" else ""
+            self.act_pdf["job_title"] = self.params[5] if self.params[5] != "no" else ""
             self.act_pdf["Personnel"] = self.params[6] if self.params[6] != "no" else ""
             self.act_pdf["initials"] = self.params[7]
-            self.act_pdf["Табельный номер отдела"] = self.params[8] if self.params[8] != "no" else ""
+            self.act_pdf["tabel_number"] = self.params[8] if self.params[8] != "no" else ""
             self.act_pdf["inv_number"] = self.params[9] if self.params[9] != "no" else ""
             self.act_pdf["cost"] = self.params[10] if self.params[10] != "no" else ""
             self.act_pdf["act_date"] = self.params[11]
