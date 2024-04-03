@@ -5,15 +5,19 @@ from fabricMethod.Act import Act
 import base64
 import config
 import os
+import shutil
 class FillPdf:
     def __init__(self, data: Act):
         self.writer = PdfFileWriter()
         self.reader = PdfFileReader(config.path_template + "main.pdf", strict=False)
         self.act_data = data
-        print(self.act_data)
 
     def create_folder(self):
         os.mkdir(config.path_template + self.act_data.act['number'])
+
+    def copy_empty_template(self):
+        shutil.copyfile(config.path_template + "main.pdf", config.path_template + self.act_data.act['number'] + "\\main.pdf")
+
 
     def fill_template(self):
         self.setUpdateRoot()
@@ -45,7 +49,7 @@ class FillPdf:
                 {NameObject("/NeedAppearances"): BooleanObject(True)})
 
     def writePdf(self):
-        with open("1.pdf", "wb") as f:
+        with open(config.path_template + self.act_data.act['number'] + "\\main.pdf", "wb") as f:
             self.writer.write(f)
 
     def getPdfBaseEncode(self):

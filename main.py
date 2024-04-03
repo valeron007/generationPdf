@@ -33,13 +33,14 @@ if __name__ == '__main__':
         act_pdf = app.create_document(sys.argv[1], [x for x in sys.argv])  # Open document format
         act_pdf.setAct()
         act_pdf.setActPdf()
+        '''
         logging.basicConfig(level=logging.DEBUG, filename='error.log')
         logging.debug('param: %s', act_pdf.params)
         logging.debug('act: %s', act_pdf.act)
-
+        '''
         fillPdf = fill.FillPdf(act_pdf)
         fillPdf.create_folder()
-        #fillPdf.fill_template()
+        fillPdf.fill_template()
 
         writer = PdfFileWriter()
         #original template2.pdf
