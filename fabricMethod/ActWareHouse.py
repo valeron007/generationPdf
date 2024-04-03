@@ -64,6 +64,3 @@ class ActWareHouse(act.Act):
         elif name == 'act_date':
             return self.act['act_date'] if 'act_date' in self.act else ""
 
-
-
-

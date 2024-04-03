@@ -6,11 +6,7 @@ try:
     app = myapplication.MyApplication()
     employee = app.create_document(sys.argv[1], [x.encode('utf-8') for x in sys.argv])  # Open document format
     employee.setAct()
-    #warehouse = app.create_document(sys.argv[1], [x.encode('utf-8') for x in sys.argv])
-    #warehouse.setAct()
-    #employee.show()
-    #warehouse.show()
-    #print()
+
     model_name = employee.getValueField("Модель")
     print(employee.show())
     data = [x for x in sys.argv]

@@ -35,6 +35,7 @@ class ActEmployee(act.Act):
             self.act_pdf["inv_number"] = self.params[12] if self.params[12] != "no" else ""
             self.act_pdf["cost"] = self.params[13] if self.params[13] != "no" else ""
             self.act_pdf["act_date"] = self.params[14]
+
         except BaseException as e:
             print(e)
     def setAct(self):
@@ -52,6 +53,7 @@ class ActEmployee(act.Act):
             self.act["inv_number"] = self.params[12] if self.params[12] != "no" else ""
             self.act["initial_cost"] = self.params[13] if self.params[13] != "no" else ""
             self.act["act_date"] = self.params[14]
+
         except BaseException as e:
             print(e)
 

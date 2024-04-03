@@ -3,15 +3,19 @@ from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
 
 from fabricMethod.Act import Act
 import base64
-
-
+import config
+import os
 class FillPdf:
     def __init__(self, data: Act):
         self.writer = PdfFileWriter()
-        self.reader = PdfFileReader("\\template\\main.pdf", strict=False)
+        self.reader = PdfFileReader(config.path_template + "main.pdf", strict=False)
         self.act_data = data
+        print(self.act_data)
 
-    def fillTemplate(self):
+    def create_folder(self):
+        os.mkdir(config.path_template + self.act_data.act['number'])
+
+    def fill_template(self):
         self.setUpdateRoot()
         self.catalog = self.writer._root_object
         self.setUpdateCatalog()
