@@ -1,13 +1,9 @@
 import json
-from PyPDF4.pdf import PdfFileReader, PdfFileWriter
-from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
-from PyPDF4.generic import TextStringObject
 import sys
-import base64
 import fabricMethod.MyApplication as myapplication
 import FillPdf.fillpdf as fill
 import logging
-import config
+
 
 """
     поля для заполнения
