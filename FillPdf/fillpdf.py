@@ -10,6 +10,7 @@ class FillPdf:
     def __init__(self, data: Act):
         self.writer = PdfFileWriter()
         self.reader = PdfFileReader(config.path_template + "main.pdf", strict=False)
+        self.pdf_encode = None
         self.act_data = data
 
     def create_folder(self):
@@ -54,6 +55,6 @@ class FillPdf:
 
     def getPdfBaseEncode(self):
         with open(config.path_template + self.act_data.act['number'] + "\\main.pdf", "rb") as pdfFile:
-            pdf_encode = base64.b64encode(pdfFile.read()).decode('utf-8')
+            self.pdf_encode = base64.b64encode(pdfFile.read()).decode('utf-8')
 
-        return pdf_encode
+        return self.pdf_encode
