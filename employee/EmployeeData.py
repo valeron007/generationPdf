@@ -6,8 +6,9 @@ class EmployeeData:
 
     def get_position(self):
         return self.__position
-    def add_name_folder(self, name):
-        self.__data['folder'] = name + '_' + self.__data["number"]
+
+    def add_name_folder(self):
+        self.__data['folder'] = self.__data["number_request"]
 
     def get_folder(self):
         return self.__data['folder']
@@ -17,7 +18,7 @@ class EmployeeData:
         self.__data["number"] = self.__params[2] if self.__params[2] != "no" else ""
         self.__data["job_title"] = self.__params[3] if self.__params[3] != "no" else ""
         self.__data["type_sign"] = self.__params[4]
-        self.__data["number"] = self.__params[5]
+        self.__data["number_request"] = self.__params[5]
 
         if self.__data["type_sign"] == 'transferrer':
             self.__position['x'] = 15
@@ -28,3 +29,6 @@ class EmployeeData:
 
     def get_data(self):
         return self.__data
+
+    def get_name_number_request(self):
+        return self.__data["number_request"]

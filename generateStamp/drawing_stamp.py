@@ -1,3 +1,5 @@
+import base64
+
 from pdfrw import PdfReader, PdfWriter, PageMerge
 import config
 
@@ -20,6 +22,11 @@ class SignDocument:
         # write the modified content to disk
         self.writer_file.write(self.output_file, self.reader_input)
 
+    def get_sign(self):
+        with open(self.output_file, "rb") as pdfFile:
+            pdf_encode = base64.b64encode(pdfFile.read()).decode('utf-8')
+
+        return pdf_encode
 
 
 
