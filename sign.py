@@ -8,8 +8,10 @@ import logging
 
 if __name__ == '__main__':
     try:
+        data_test = [x for x in sys.argv]
         employee_data = data.EmployeeData([x for x in sys.argv])
         employee_data.set_data()
+
         employee_data.add_name_folder()
 
         employee_stamp = CreatorStamp.created_stamp(employee_data.get_data(), employee_data.get_folder())
