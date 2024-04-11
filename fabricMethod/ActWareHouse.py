@@ -17,7 +17,7 @@ class ActWareHouse(act.Act):
         self.act["personnel_number"] = self.params[6] if self.params[6] != "no" else ""
         self.act["fio"] = self.params[7]
         self.act["warehouse"] = self.params[8]
-        self.act["inv_number"] = self.params[9] if self.params[9] != "no" else ""
+        self.act["inventor_number"] = self.params[9] if self.params[9] != "no" else ""
         self.act["initial_cost"] = self.params[10] if self.params[10] != "no" else ""
         self.act["act_date"] = self.params[11]
         self.act["number"] = self.params[12] if self.params[12] != "no" else ""
@@ -31,8 +31,8 @@ class ActWareHouse(act.Act):
             self.act_pdf["Personnel"] = self.params[6] if self.params[6] != "no" else ""
             self.act_pdf["initials"] = self.params[7]
             self.act_pdf["tabel_number"] = self.params[8] if self.params[8] != "no" else ""
-            self.act_pdf["inv_number"] = self.params[9] if self.params[9] != "no" else ""
-            self.act_pdf["cost"] = self.params[10] if self.params[10] != "no" else ""
+            self.act_pdf["inventor_number"] = self.params[9] if self.params[9] != "no" else ""
+            self.act_pdf["initial_cost"] = self.params[10] if self.params[10] != "no" else ""
             self.act_pdf["act_date"] = self.params[11]
         except BaseException as e:
             print(e)
@@ -58,9 +58,9 @@ class ActWareHouse(act.Act):
             return self.act['new_owner_job_title'] if 'new_owner_job_title' in self.act else ""
         elif name == 'receiving':
             return self.act['new_owner_personnel_number'] if 'new_owner_personnel_number' in self.act else ""
-        elif name == 'inv_number':
-            return self.act['inv_number'] if 'inv_number' in self.act else ""
-        elif name == 'cost':
+        elif name == 'inventor_number':
+            return self.act['inventor_number'] if 'inventor_number' in self.act else ""
+        elif name == 'initial_cost':
             return self.act['initial_cost'] if 'initial_cost' in self.act else ""
         elif name == 'act_date':
             return self.act['act_date'] if 'act_date' in self.act else ""
