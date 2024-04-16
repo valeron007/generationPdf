@@ -19,6 +19,13 @@ class FillPdf:
     def copy_empty_template(self):
         shutil.copyfile(config.path_template + "main.pdf", config.path_template + self.act_data.act['number'] + "\\main.pdf")
 
+    def create_folder_to_drive(self):
+        os.mkdir(config.path_drive + self.act_data.act['number'])
+    def copy_to_drive_network(self):
+        shutil.copyfile(config.path_template + self.act_data.act['number'] + "\\main.pdf",
+                        config.path_drive + self.act_data.act['number'] + ".pdf")
+
+
     #field form and save document
     def fill_template(self):
         self.setUpdateRoot()
