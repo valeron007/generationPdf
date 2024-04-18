@@ -12,7 +12,7 @@ username = 'int\A828835'
 password = 'Ahjv0792!'
 
 smbclient.shutil.copyfile(
-    config.path_template + '\\REQ0005366\\',
+    config.path_template + '\\REQ0005366\\main.pdf',
     config.path_drive,
     username=username,
     password=password)

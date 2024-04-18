@@ -14,7 +14,8 @@ class FillPdf:
         self.act_data = data
 
     def create_folder(self):
-        os.mkdir(config.path_template + self.act_data.act['number'])
+        if not os.path.isdir(config.path_template + self.act_data.act['number']):
+            os.mkdir(config.path_template + self.act_data.act['number'])
 
     def copy_empty_template(self):
         shutil.copyfile(config.path_template + "main.pdf", config.path_template + self.act_data.act['number'] + "\\main.pdf")
