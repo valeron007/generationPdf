@@ -26,7 +26,7 @@ import logging
 if __name__ == '__main__':
     try:
         app = myapplication.MyApplication()
-        act_pdf = app.create_document(sys.argv[1], [x for x in sys.argv])  # Open document format
+        act_pdf = app.create_document(sys.argv[1], [x for x in sys.argv])
         act_pdf.setAct()
         act_pdf.setActPdf()
 
@@ -42,6 +42,7 @@ if __name__ == '__main__':
     except BaseException as e:
         logging.basicConfig(level=logging.DEBUG, filename='error.log')
         logging.debug('error: %s', e)
+        logging.debug([x for x in sys.argv])
         print(e)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

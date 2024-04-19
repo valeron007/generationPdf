@@ -35,6 +35,7 @@ class ActEmployee(act.Act):
             self.act_pdf["inventor_number"] = self.params[12] if self.params[12] != "no" else ""
             self.act_pdf["initial_cost"] = self.params[13] if self.params[13] != "no" else ""
             self.act_pdf["act_date"] = self.params[14]
+            self.act_pdf["number"] = self.params[15]
 
         except BaseException as e:
             print(e)
@@ -53,6 +54,7 @@ class ActEmployee(act.Act):
             self.act["inventor_number"] = self.params[12] if self.params[12] != "no" else ""
             self.act["initial_cost"] = self.params[13] if self.params[13] != "no" else ""
             self.act["act_date"] = self.params[14]
+            self.act["number"] = self.params[15]
 
         except BaseException as e:
             print(e)
