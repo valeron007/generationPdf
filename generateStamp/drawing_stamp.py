@@ -53,8 +53,5 @@ class SignDocument:
         self.writer.appendPagesFromReader(self.reader)
         self.writer.updatePageFormFieldValues(self.writer.getPage(0), act_pdf)
 
-        self.writePdf()
-
-    def writePdf(self):
         with open(self.input_file, "wb") as f:
             self.writer.write(f)
