@@ -15,12 +15,11 @@ if __name__ == '__main__':
         employee_data.add_name_folder()
 
         #fill form
-        data_pdf = employee_data
+        data_pdf = employee_data.get_data()
         act_pdf = {}
         act_pdf["tenure"] = data_pdf['fio']
         act_pdf["receivingInitials"] = data_pdf['job_title']
         act_pdf["receiving"] = data_pdf['number']
-
 
         employee_stamp = CreatorStamp.created_stamp(employee_data.get_data(), employee_data.get_folder())
         CreateStampPdf.createPdf(employee_stamp, employee_data.get_position(), employee_data.get_folder())
