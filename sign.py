@@ -16,15 +16,14 @@ if __name__ == '__main__':
 
         #fill form
         data_pdf = employee_data.get_data()
-        act_pdf = {}
-        act_pdf["tenure"] = data_pdf['fio']
-        act_pdf["receivingInitials"] = data_pdf['job_title']
-        act_pdf["receiving"] = data_pdf['number']
+        act_pdf = {"tenure": data_pdf['fio'], "receivingInitials": data_pdf['job_title'],
+                   "receiving": data_pdf['number']}
 
         employee_stamp = CreatorStamp.created_stamp(employee_data.get_data(), employee_data.get_folder())
         CreateStampPdf.createPdf(employee_stamp, employee_data.get_position(), employee_data.get_folder())
 
         employee_signed = draw.SignDocument(employee_stamp.get_rand_name() + '_stamp.pdf', 'main.pdf', "main.pdf", employee_data.get_folder())
+        employee_signed.fill_form(act_pdf=act_pdf)
         employee_signed.signed_file()
 
         result = {"pdf": employee_signed.get_sign()}
