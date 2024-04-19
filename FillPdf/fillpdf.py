@@ -26,7 +26,6 @@ class FillPdf:
         shutil.copyfile(config.path_template + self.act_data.act['number'] + "\\main.pdf",
                         config.path_drive + self.act_data.act['number'] + ".pdf")
 
-
     #field form and save document
     def fill_template(self):
         self.setUpdateRoot()
