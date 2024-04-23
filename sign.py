@@ -52,7 +52,10 @@ if __name__ == '__main__':
         employee_stamp = CreatorStamp.created_stamp(employee_data.get_data(), employee_data.get_folder())
         CreateStampPdf.createPdf(employee_stamp, employee_data.get_position(), employee_data.get_folder())
 
-        employee_signed = draw.SignDocument(employee_stamp.get_rand_name() + '_stamp.pdf', 'main.pdf', "main.pdf", employee_data.get_folder())
+        employee_signed = draw.SignDocument(employee_stamp.get_rand_name() + '_stamp.pdf',
+                                            employee_data.get_act_id() + '.pdf',
+                                            employee_data.get_act_id() + ".pdf",
+                                            employee_data.get_folder())
         employee_signed.signed_file()
 
         result = {"pdf": employee_signed.get_sign()}

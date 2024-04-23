@@ -13,12 +13,14 @@ class FillPdf:
         self.pdf_encode = None
         self.act_data = data
 
+
     def create_folder(self):
         if not os.path.isdir(config.path_template + self.act_data.act['number']):
             os.mkdir(config.path_template + self.act_data.act['number'])
 
     def copy_empty_template(self):
-        shutil.copyfile(config.path_template + "main.pdf", config.path_template + self.act_data.act['number'] + "\\main.pdf")
+        shutil.copyfile(config.path_template + "main.pdf",
+                        config.path_template + self.act_data.act['number'] + "\\" + self.act_data.act['equipment'] + ".pdf")
 
     def create_folder_to_drive(self):
         os.mkdir(config.path_drive + self.act_data.act['number'])
@@ -57,11 +59,11 @@ class FillPdf:
                 {NameObject("/NeedAppearances"): BooleanObject(True)})
 
     def writePdf(self):
-        with open(config.path_template + self.act_data.act['number'] + "\\main.pdf", "wb") as f:
+        with open(config.path_template + self.act_data.act['number'] + "\\" + self.act_data.act['equipment'] + ".pdf", "wb") as f:
             self.writer.write(f)
 
     def getPdfBaseEncode(self):
-        with open(config.path_template + self.act_data.act['number'] + "\\main.pdf", "rb") as pdfFile:
+        with open(config.path_template + self.act_data.act['number'] + "\\" + self.act_data.act['equipment'] + ".pdf", "rb") as pdfFile:
             self.pdf_encode = base64.b64encode(pdfFile.read()).decode('utf-8')
 
         return self.pdf_encode

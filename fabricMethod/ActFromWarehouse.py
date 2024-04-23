@@ -21,7 +21,7 @@ class ActFromWarehouse(act.Act):
         self.act["initial_cost"] = self.params[10] if self.params[10] != "no" else ""
         self.act["act_date"] = self.params[11]
         self.act["number"] = self.params[12]
-        self.act["act_id"] = self.params[13]
+        self.act["equipment"] = self.params[13]
 
     def setActPdf(self):
         try:
