@@ -36,6 +36,8 @@ class ActEmployee(act.Act):
             self.act_pdf["initial_cost"] = self.params[13] if self.params[13] != "no" else ""
             self.act_pdf["act_date"] = self.params[14]
             self.act_pdf["number"] = self.params[15]
+            self.act_pdf["act_id"] = self.params[16]
+
 
         except BaseException as e:
             print(e)
