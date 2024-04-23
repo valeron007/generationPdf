@@ -19,6 +19,7 @@ class EmployeeData:
         self.__data["job_title"] = self.__params[3] if self.__params[3] != "no" else ""
         self.__data["type_sign"] = self.__params[4]
         self.__data["request"] = self.__params[5]
+        self.__data["warehouse"] = self.__params[6]
 
         if self.__data["type_sign"] == 'transferrer':
             self.__position['x'] = 15
