@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
         employee_data.add_name_folder()
         #fill form
-        input_file = config.path_template + employee_data.get_folder() + '\\' + employee_data.get_act_id() + '.pdf'
+        input_file = config.path_template + employee_data.get_folder() + '\\' + employee_data.get_equipment() + '.pdf'
         writer = PdfFileWriter()
         reader = PdfFileReader(input_file, strict=False)
         data_pdf = employee_data.get_data()
@@ -53,8 +53,8 @@ if __name__ == '__main__':
         CreateStampPdf.createPdf(employee_stamp, employee_data.get_position(), employee_data.get_folder())
 
         employee_signed = draw.SignDocument(employee_stamp.get_rand_name() + '_stamp.pdf',
-                                            employee_data.get_act_id() + '.pdf',
-                                            employee_data.get_act_id() + ".pdf",
+                                            employee_data.get_equipment() + '.pdf',
+                                            employee_data.get_equipment() + ".pdf",
                                             employee_data.get_folder())
         employee_signed.signed_file()
 

@@ -13,8 +13,8 @@ class EmployeeData:
     def get_folder(self):
         return self.__data['folder']
 
-    def get_act_id(self):
-        return self.__data["act_id"]
+    def get_equipment(self):
+        return self.__data["equipment"]
     def set_data(self):
         self.__data["fio"] = self.__params[1]
         self.__data["number"] = self.__params[2] if self.__params[2] != "no" else ""
@@ -22,7 +22,7 @@ class EmployeeData:
         self.__data["type_sign"] = self.__params[4]
         self.__data["request"] = self.__params[5]
         self.__data["warehouse"] = self.__params[6]
-        self.__data["act_id"] = self.__params[7]
+        self.__data["equipment"] = self.__params[7]
 
         if self.__data["type_sign"] == 'transferrer':
             self.__position['x'] = 15
