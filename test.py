@@ -1,20 +1,18 @@
-import os
+import datetime
 import config
-import shutil
-import subprocess
-
-#print(config.path_drive)
-#print(os.path.exists(config.path_drive))
-
 import smbclient.shutil
 
-username = 'int\A828835'
-password = 'Ahjv0792!'
+username = 'int\sabx155'
+password = 'GGkxXwA0AYPKwiBRfsft'
+
+year = datetime.date.today().year
+print(year)
+
+city = 'Москва'
 
 smbclient.shutil.copyfile(
     config.path_template + '\\REQ0005366\\main.pdf',
-    config.path_drive,
+    config.path_drive + city + '\\' + str(year) + '\\main.pdf',
     username=username,
     password=password)
-
 

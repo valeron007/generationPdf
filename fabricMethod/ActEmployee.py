@@ -38,7 +38,6 @@ class ActEmployee(act.Act):
             self.act_pdf["number"] = self.params[15]
             self.act_pdf["equipment"] = self.params[16]
 
-
         except BaseException as e:
             print(e)
     def setAct(self):
