@@ -1,8 +1,9 @@
 import base64
-
+import config
+import datetime
+import smbclient.shutil
 
 from pdfrw import PdfReader, PdfWriter, PageMerge
-import config
 
 
 class SignDocument:
@@ -30,3 +31,11 @@ class SignDocument:
             pdf_encode = base64.b64encode(pdfFile.read()).decode('utf-8')
 
         return pdf_encode
+
+    def copy_act(self, location, name):
+        year = datetime.date.today().year
+        smbclient.shutil.copyfile(
+            self.output_file,
+            config.path_drive + location + '\\' + str(year) + '\\' + name,
+            username=config.username,
+            password=config.password)

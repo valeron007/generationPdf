@@ -37,3 +37,10 @@ class EmployeeData:
 
     def get_name_number_request(self):
         return self.__data["request"]
+
+    def get_type_act(self):
+        return self.__data["type_sign"]
+
+    def get_location(self):
+        return self.__data["location"]
+

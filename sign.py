@@ -58,6 +58,10 @@ if __name__ == '__main__':
                                             employee_data.get_folder())
         employee_signed.signed_file()
 
+        if employee_data.get_type_act() == 'receveing':
+            employee_signed.copy_act(employee_data.get_location(), employee_data.get_name_number_request())
+
+
         result = {"pdf": employee_signed.get_sign()}
         print(json.dumps(result))
     except BaseException as e:
