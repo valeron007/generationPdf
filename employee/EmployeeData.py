@@ -23,6 +23,7 @@ class EmployeeData:
         self.__data["request"] = self.__params[5]
         self.__data["warehouse"] = self.__params[6]
         self.__data["equipment"] = self.__params[7]
+        self.__data["location"] = self.__params[8]
 
         if self.__data["type_sign"] == 'transferrer':
             self.__position['x'] = 15
