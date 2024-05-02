@@ -1,4 +1,6 @@
 import base64
+import json
+
 import config
 import datetime
 import smbclient.shutil
@@ -33,9 +35,12 @@ class SignDocument:
         return pdf_encode
 
     def copy_act(self, location, name):
-        year = datetime.date.today().year
-        smbclient.shutil.copyfile(
-            self.output_file,
-            config.path_drive + location + '\\' + str(year) + '\\' + name,
-            username=config.username,
-            password=config.password)
+        try:
+            year = datetime.date.today().year
+            smbclient.shutil.copyfile(
+                self.output_file,
+                config.path_drive + location + '\\' + str(year) + '\\' + name,
+                username=config.username,
+                password=config.password)
+        except BaseException as e:
+            print(json.dumps(e))

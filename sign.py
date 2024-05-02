@@ -13,12 +13,15 @@ from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
 
 if __name__ == '__main__':
     try:
+        logging.basicConfig(level=logging.DEBUG, filename='error.log')
+        logging.debug([x for x in sys.argv])
         data_test = [x for x in sys.argv]
         employee_data = data.EmployeeData([x for x in sys.argv])
+        print('wwwwwwwwwwwwwwww')
         employee_data.set_data()
-
+        print('2222222222')
         employee_data.add_name_folder()
-        #fill form
+
         input_file = config.path_template + employee_data.get_folder() + '\\' + employee_data.get_equipment() + '.pdf'
         writer = PdfFileWriter()
         reader = PdfFileReader(input_file, strict=False)
@@ -61,11 +64,10 @@ if __name__ == '__main__':
         if employee_data.get_type_act() == 'receveing':
             employee_signed.copy_act(employee_data.get_location(), employee_data.get_name_number_request())
 
-
         result = {"pdf": employee_signed.get_sign()}
         print(json.dumps(result))
     except BaseException as e:
         logging.basicConfig(level=logging.DEBUG, filename='error.log')
         logging.debug('error: %s', e)
+        logging.debug([x for x in sys.argv])
         print(json.dumps(e))
-
