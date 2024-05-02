@@ -34,6 +34,7 @@ class SignDocument:
 
         return pdf_encode
 
+    '''
     def copy_act(self, location, name):
         try:
             year = datetime.date.today().year
@@ -44,3 +45,4 @@ class SignDocument:
                 password=config.password)
         except BaseException as e:
             print(json.dumps(e))
+    '''
