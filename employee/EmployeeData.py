@@ -13,8 +13,12 @@ class EmployeeData:
     def get_folder(self):
         return self.__data['folder']
 
+    def get_act_id(self):
+        return self.__data["act_id"]
+
     def get_equipment(self):
         return self.__data["equipment"]
+
     def set_data(self):
         self.__data["fio"] = self.__params[1]
         self.__data["number"] = self.__params[2] if self.__params[2] != "no" else ""
@@ -41,6 +45,7 @@ class EmployeeData:
     def get_type_act(self):
         return self.__data["type_sign"]
 
+    '''
     def get_location(self):
         return self.__data["location"]
-
+    '''

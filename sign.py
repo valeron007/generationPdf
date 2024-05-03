@@ -13,7 +13,6 @@ from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
 
 if __name__ == '__main__':
     try:
-        data_test = [x for x in sys.argv]
         employee_data = data.EmployeeData([x for x in sys.argv])
         employee_data.set_data()
         employee_data.add_name_folder()
@@ -65,6 +64,6 @@ if __name__ == '__main__':
         result = {"pdf": employee_signed.get_sign()}
         print(json.dumps(result))
     except BaseException as e:
-        logging.basicConfig(level=logging.DEBUG, filename='error.log')
+        logging.basicConfig(level=logging.DEBUG, filename='er.log')
         logging.debug('error: %s', e)
-        print(json.dumps(e))
+        logging.debug([x for x in sys.argv])

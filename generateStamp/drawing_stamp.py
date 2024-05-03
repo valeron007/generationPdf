@@ -1,9 +1,5 @@
 import base64
-import json
-
 import config
-import datetime
-import smbclient.shutil
 
 from pdfrw import PdfReader, PdfWriter, PageMerge
 
