@@ -1,15 +1,15 @@
 import json
+import logging
 import sys
+
+from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
+from PyPDF4.pdf import PdfFileReader, PdfFileWriter
 
 import config
 from employee import EmployeeData as data
-from generateStamp.CreatorStamp import CreatorStamp
 from generateStamp import drawing_stamp as draw
+from generateStamp.CreatorStamp import CreatorStamp
 from generateStamp.createStampPdf import CreateStampPdf
-import logging
-
-from PyPDF4.pdf import PdfFileReader, PdfFileWriter
-from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
 
 if __name__ == '__main__':
     try:
@@ -56,10 +56,10 @@ if __name__ == '__main__':
                                             employee_data.get_folder())
         employee_signed.signed_file()
 
-        '''
         if employee_data.get_type_act() == 'receveing':
-            employee_signed.copy_act(employee_data.get_location(), employee_data.get_name_number_request())
-        '''
+            employee_signed.copy_act(employee_data.get_location(),
+                                     employee_data.get_name_number_request() + '.pdf')
+
 
         result = {"pdf": employee_signed.get_sign()}
         print(json.dumps(result))

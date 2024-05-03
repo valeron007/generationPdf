@@ -1,4 +1,8 @@
 import base64
+import datetime
+
+import smbclient.shutil
+
 import config
 
 from pdfrw import PdfReader, PdfWriter, PageMerge
@@ -15,7 +19,6 @@ class SignDocument:
         self.writer_file = PdfWriter()
         # for update form
 
-
     def signed_file(self):
         for current_page in range(len(self.reader_input.pages)):
             merge_page = PageMerge(self.reader_input.pages[current_page])
@@ -30,15 +33,10 @@ class SignDocument:
 
         return pdf_encode
 
-    '''
     def copy_act(self, location, name):
-        try:
-            year = datetime.date.today().year
-            smbclient.shutil.copyfile(
-                self.output_file,
-                config.path_drive + location + '\\' + str(year) + '\\' + name,
-                username=config.username,
-                password=config.password)
-        except BaseException as e:
-            print(json.dumps(e))
-    '''
+        smbclient.shutil.copyfile(
+            self.output_file,
+            config.path_drive + location + '\\' + str(datetime.date.today().year) + '\\' + name,
+            username=config.username,
+            password=config.password)
+
