@@ -4,7 +4,7 @@ import sys
 
 from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
 from PyPDF4.pdf import PdfFileReader, PdfFileWriter
-
+from datetime import date
 import config
 from employee import EmployeeData as data
 from generateStamp import drawing_stamp as draw
@@ -57,8 +57,8 @@ if __name__ == '__main__':
         employee_signed.signed_file()
 
         if employee_data.get_type_act() == 'receveing':
-            employee_signed.copy_act(employee_data.get_location(),
-                                     employee_data.get_name_number_request() + '.pdf')
+            name = employee_data.get_fio() + '_акт перемещения ОС_' + str(date.today()) + '.pdf'
+            employee_signed.copy_act(employee_data.get_location(), name)
 
 
         result = {"pdf": employee_signed.get_sign()}

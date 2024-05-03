@@ -39,6 +39,9 @@ class EmployeeData:
     def get_data(self):
         return self.__data
 
+    def get_fio(self):
+        return self.__data["fio"]
+
     def get_name_number_request(self):
         return self.__data["request"]
 
