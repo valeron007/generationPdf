@@ -29,7 +29,6 @@ if __name__ == '__main__':
         act_pdf = app.create_document(sys.argv[1], [x for x in sys.argv])
         act_pdf.setAct()
         act_pdf.setActPdf()
-
         fillPdf = fill.FillPdf(act_pdf)
         fillPdf.create_folder()
         fillPdf.copy_empty_template()

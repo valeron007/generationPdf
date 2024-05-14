@@ -10,6 +10,8 @@ class ActWareHouse(act.Act):
         print(self.act)
 
     def setAct(self):
+        #0              1            2              3           4                   5                                                               6               7                   8          9       10        11             12           13
+        #'main.py', 'warehouse', 'lifebook s7020', '23w', 'RU751DG503', '\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0441\u0442', '00010461', 'Andryuschenko Valeriy', 'RU751OPR43', '2344', '60000', '14.05.2024', 'REQ0006135', '171352408295958007'
         self.act["name"] = self.params[2]
         self.act["serial_number"] = self.params[3] if self.params[3] != "no" else ""
         self.act["cost_center_caller"] = self.params[4] if self.params[4] != "no" else ""
@@ -21,7 +23,7 @@ class ActWareHouse(act.Act):
         self.act["initial_cost"] = self.params[10] if self.params[10] != "no" else ""
         self.act["act_date"] = self.params[11]
         self.act["number"] = self.params[12] if self.params[12] != "no" else ""
-        self.act["act_id"] = self.params[13] if self.params[13] != "no" else ""
+        self.act["equipment"] = self.params[13] if self.params[13] != "no" else ""
 
     def setActPdf(self):
         try:

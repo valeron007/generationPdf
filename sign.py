@@ -57,7 +57,7 @@ if __name__ == '__main__':
         employee_signed.signed_file()
 
         if employee_data.get_type_act() == 'receveing':
-            name = employee_data.get_fio() + '_акт перемещения ОС_' + str(date.today()) + '.pdf'
+            name = employee_data.get_fio() + '_акт перемещения ОС_' + str(date.today().strftime('%d-%m-%Y')) + '.pdf'
             employee_signed.copy_act(employee_data.get_location(), name)
 
 

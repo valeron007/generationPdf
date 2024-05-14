@@ -1,3 +1,5 @@
+import json
+
 from PyPDF4.pdf import PdfFileReader, PdfFileWriter
 from PyPDF4.generic import NameObject, BooleanObject, IndirectObject
 
