@@ -33,17 +33,17 @@ class GenerateStamp:
         self.__canvas.rectangle(self.__shape, fill='#ffffff', outline='#31317A', width=2)
 
     def create_title(self):
-        self.__canvas.text((90, 10), "ДОКУМЕНТ ПОДПИСАН", fill='#8e90a0', font=self.__font_title, spacing=10)
-        self.__canvas.text((55, 20), "ПРОСТОЙ ЭЛЕКТРОННОЙ ПОДПИСЬЮ", fill='#8e90a0', font=self.__font_title, spacing=10)
+        self.__canvas.text((90, 10), "ДОКУМЕНТ ПОДПИСАН", fill=(24, 93, 255), font=self.__font_title, spacing=10)
+        self.__canvas.text((55, 20), "ПРОСТОЙ ЭЛЕКТРОННОЙ ПОДПИСЬЮ", fill=(24, 93, 255), font=self.__font_title, spacing=10)
 
     def create_content(self):
-        self.__canvas.text((20, 40), "Владелец", fill='#8e90a0', font=self.__font_title, spacing=10)
-        self.__canvas.text((90, 40), self.__employee.get_fio(), fill='#8e90a0', font=self.__font_title, spacing=10)
-        self.__canvas.text((20, 50), self.__employee.get_job_title(), fill='#8e90a0', font=self.__font_title, spacing=10)
-        self.__canvas.text((20, 60), 'Личный номер', fill='#8e90a0', font=self.__font_title, spacing=10)
-        self.__canvas.text((110, 60), self.__employee.get_personal_number(), fill='#8e90a0', font=self.__font_title, spacing=10)
-        self.__canvas.text((20, 70), 'Дата подписания', fill='#8e90a0', font=self.__font_title, spacing=10)
-        self.__canvas.text((130, 70), self.__employee.get_sign_date(), fill='#8e90a0', font=self.__font_title, spacing=10)
+        self.__canvas.text((20, 40), "Владелец", fill=(24, 93, 255), font=self.__font_title, spacing=10)
+        self.__canvas.text((90, 40), self.__employee.get_fio(), fill=(24, 93, 255), font=self.__font_title, spacing=10)
+        self.__canvas.text((20, 50), self.__employee.get_job_title(), fill=(24, 93, 255), font=self.__font_title, spacing=10)
+        self.__canvas.text((20, 60), 'Личный номер', fill=(24, 93, 255), font=self.__font_title, spacing=10)
+        self.__canvas.text((110, 60), self.__employee.get_personal_number(), fill=(24, 93, 255), font=self.__font_title, spacing=10)
+        self.__canvas.text((20, 70), 'Дата подписания', fill=(24, 93, 255), font=self.__font_title, spacing=10)
+        self.__canvas.text((130, 70), self.__employee.get_sign_date(), fill=(24, 93, 255), font=self.__font_title, spacing=10)
 
     def copy(self):
         self.dest = shutil.copyfile(config.path_template + 'stamp.pdf', config.path_template + self.get_rand_name() + ".pdf")
