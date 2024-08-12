@@ -40,3 +40,17 @@ class SignDocument:
             username=config.username,
             password=config.password)
 
+    @staticmethod
+    def added_brcode(pdf_act, brcode_pdf):
+        act_pdf = PdfReader(pdf_act)
+        brcode = PdfReader(brcode_pdf)
+        output_file = PdfWriter()
+
+        brcode_page = brcode.pages[0]
+
+        for current_page in range(len(act_pdf.pages)):
+            merge_page = PageMerge(act_pdf.pages[current_page])
+            merge_page.add(brcode_page).render()
+
+        output_file.write(pdf_act, act_pdf)
+

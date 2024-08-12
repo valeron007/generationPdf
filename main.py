@@ -6,6 +6,7 @@ import logging
 import brcodeAct.generateBRCode as code
 import config
 from generateStamp.createStampPdf import CreateStampPdf
+from generateStamp.drawing_stamp import SignDocument
 
 """
     поля для заполнения
@@ -39,13 +40,16 @@ if __name__ == '__main__':
         fillPdf.writePdf()
 
         # generate brcode
-        gen_code = code.GenerateCode(config.path_template + act_pdf.act['number'], act_pdf.act['equipment'])
+        gen_code = code.GenerateCode(config.path_template + act_pdf.act['number'], act_pdf.act['serial_number'])
         gen_code.generate_image_code()
         # generate pdf brcode
         CreateStampPdf.create_brcode_pdf(gen_code.path_image, gen_code.brcode_pdf,
                                          {'x': 400, 'y': 750}, 150, 50, act_pdf.act['number'])
 
-
+        # brcode added
+        act_file_path = config.path_template + act_pdf.act['number'] + '\\' + act_pdf.act['equipment'] + '.pdf'
+        brcode_file_path = config.path_template + act_pdf.act['number'] + '\\' + act_pdf.act['serial_number'] + '_brcode.pdf'
+        SignDocument.added_brcode(act_file_path, brcode_file_path)
 
         result = {"pdf": fillPdf.getPdfBaseEncode()}
         content = json.dumps(result)
