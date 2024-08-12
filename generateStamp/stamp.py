@@ -16,3 +16,8 @@ class StampGen:
         stamp.drawImage(config.root_project + '\\image\\' + self.name_image, self.position_x, self.position_y, self.width, self.height)
         stamp.save()
 
+    def generateBRCodeForEmployee(self, folder_name) -> None:
+        stamp = canvas.Canvas(config.root_project + '\\template\\' + folder_name + '\\' + self.template)
+        stamp.drawImage(self.name_image, self.position_x, self.position_y, self.width, self.height)
+        stamp.save()
+

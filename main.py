@@ -3,7 +3,9 @@ import sys
 import fabricMethod.MyApplication as myapplication
 import FillPdf.fillpdf as fill
 import logging
-
+import brcodeAct.generateBRCode as code
+import config
+from generateStamp.createStampPdf import CreateStampPdf
 
 """
     поля для заполнения
@@ -31,9 +33,19 @@ if __name__ == '__main__':
         act_pdf.setActPdf()
         fillPdf = fill.FillPdf(act_pdf)
         fillPdf.create_folder()
+        # config.path_template + self.act_data.act['number']
         fillPdf.copy_empty_template()
         fillPdf.fill_template()
         fillPdf.writePdf()
+
+        # generate brcode
+        gen_code = code.GenerateCode(config.path_template + act_pdf.act['number'], act_pdf.act['equipment'])
+        gen_code.generate_image_code()
+        # generate pdf brcode
+        CreateStampPdf.create_brcode_pdf(gen_code.path_image, gen_code.brcode_pdf,
+                                         {'x': 400, 'y': 750}, 150, 50, act_pdf.act['number'])
+
+
 
         result = {"pdf": fillPdf.getPdfBaseEncode()}
         content = json.dumps(result)
