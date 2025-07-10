@@ -7,4 +7,4 @@ path_drive = "\\\\10.95.46.32\\Archive\\Акты перемещения ОС\\"
 path_archive = "\\\\10.95.46.32\\Archive\\"
 
 username = 'int\sabx155'
-password = 'GGkxXwA0AYPKwiBRfsft'
+password = '2kjGS9R!Lq)UE3v'

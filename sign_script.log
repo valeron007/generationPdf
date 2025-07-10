@@ -1,0 +1,488 @@
+2024-12-11 15:12:07,956 - INFO - Script started with arguments: ['sign.py', 'Martynov Vitaly', '00010812', '\u0412\u0435\u043d\u0442\u0440\u0430', 'receveing', 'REQ0010071', 'yes', '168503504296103710', '\u0412\u043e\u0440\u043e\u043d\u0435\u0436']
+2024-12-11 15:12:07,956 - DEBUG - Employee data initialized: {'fio': 'Martynov Vitaly', 'number': '00010812', 'job_title': '\u0412\u0435\u043d\u0442\u0440\u0430', 'type_sign': 'receveing', 'request': 'REQ0010071', 'warehouse': 'yes', 'equipment': '168503504296103710', 'location': '\u0412\u043e\u0440\u043e\u043d\u0435\u0436', 'folder': 'REQ0010071'}
+2024-12-11 15:12:07,957 - DEBUG - Input file path: C:\Users\administrator\PycharmProjects\pythonProject\template\REQ0010071\168503504296103710.pdf
+2024-12-11 15:12:07,965 - DEBUG - Processing warehouse case
+2024-12-11 15:12:08,075 - DEBUG - PDF form processed and saved
+2024-12-11 15:12:08,075 - DEBUG - Creating stamp
+2024-12-11 15:12:08,204 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-11 15:12:08,206 - DEBUG - STREAM b'IDAT' 41 6274
+2024-12-11 15:12:08,218 - DEBUG - Signing document
+2024-12-11 15:12:08,323 - DEBUG - Processing receiving type act
+2024-12-11 15:12:08,439 - INFO - Initialising connection, guid: 7d240b80-e0a4-420d-8a6f-aba4e80099c2, require_signing: True, server_name: 10.95.46.32, port: 445
+2024-12-11 15:12:08,439 - INFO - Setting up transport connection
+2024-12-11 15:12:08,440 - INFO - Connecting to DirectTcp socket
+2024-12-11 15:12:08,480 - DEBUG - Socket recv(4) (total 4)
+2024-12-11 15:12:08,480 - INFO - Starting negotiation with SMB server
+2024-12-11 15:12:08,481 - INFO - Negotiating with SMB2 protocol with highest client dialect of: SMB_3_1_1
+2024-12-11 15:12:08,481 - DEBUG - Adding client guid 7d240b80-e0a4-420d-8a6f-aba4e80099c2 to negotiate request
+2024-12-11 15:12:08,481 - DEBUG - Adding client capabilities 69 to negotiate request
+2024-12-11 15:12:08,482 - DEBUG - Adding preauth integrity capabilities of hash SHA512 and salt b'\xea\xb69\x00\xa8\\e\x86-g\x141n\xe0\xee\xaa\xd6\x11\x19\xa9:\x08X\x8d\x13\x8d\xf4\xd1u\xcd\xe1$' to negotiate request
+2024-12-11 15:12:08,482 - DEBUG - Adding encryption capabilities of AES128|256 GCM and AES128|256 CCM to negotiate request
+2024-12-11 15:12:08,482 - DEBUG - Adding netname context id of 10.95.46.32 to negotiate request
+2024-12-11 15:12:08,482 - DEBUG - Adding signing algorithms AES_GMAC, AES_CMAC, and HMAC_SHA256 to negotiate request
+2024-12-11 15:12:08,484 - INFO - Sending SMB2 Negotiate message
+2024-12-11 15:12:08,485 - DEBUG - SMB3NegotiateRequest:
+    structure_size = 36
+    dialect_count = 5
+    security_mode = (2) SMB2_NEGOTIATE_SIGNING_REQUIRED
+    reserved = 0
+    capabilities = (69) SMB2_GLOBAL_CAP_DFS, SMB2_GLOBAL_CAP_ENCRYPTION, SMB2_GLOBAL_CAP_LARGE_MTU
+    client_guid = 7d240b80-e0a4-420d-8a6f-aba4e80099c2
+    negotiate_context_offset = 112
+    negotiate_context_count = 4
+    reserved2 = 0
+    dialects = [
+        (514) SMB_2_0_2,
+        (528) SMB_2_1_0,
+        (768) SMB_3_0_0,
+        (770) SMB_3_0_2,
+        (785) SMB_3_1_1
+    ]
+    padding = 00 00
+    negotiate_context_list = [
+        SMB2NegotiateContextRequest:
+            context_type = (1) SMB2_PREAUTH_INTEGRITY_CAPABILITIES
+            data_length = 38
+            reserved = 0
+            data =
+            SMB2PreauthIntegrityCapabilities:
+                hash_algorithm_count = 1
+                salt_length = 32
+                hash_algorithms = [
+                    (1) SHA_512
+                ]
+                salt = EA B6 39 00 A8 5C 65 86 2D 67 14 31 6E E0 EE AA D6 11 19 A9 3A 08 58 8D 13 8D F4 D1 75 CD E1 24
+
+                Raw Hex:
+                    01 00 20 00 01 00 EA B6
+                    39 00 A8 5C 65 86 2D 67
+                    14 31 6E E0 EE AA D6 11
+                    19 A9 3A 08 58 8D 13 8D
+                    F4 D1 75 CD E1 24
+            padding = 00 00
+
+            Raw Hex:
+                01 00 26 00 00 00 00 00
+                01 00 20 00 01 00 EA B6
+                39 00 A8 5C 65 86 2D 67
+                14 31 6E E0 EE AA D6 11
+                19 A9 3A 08 58 8D 13 8D
+                F4 D1 75 CD E1 24 00 00,
+        SMB2NegotiateContextRequest:
+            context_type = (2) SMB2_ENCRYPTION_CAPABILITIES
+            data_length = 10
+            reserved = 0
+            data =
+            SMB2EncryptionCapabilities:
+                cipher_count = 4
+                ciphers = [
+                    (2) AES_128_GCM,
+                    (1) AES_128_CCM,
+                    (4) AES_256_GCM,
+                    (3) AES_256_CCM
+                ]
+
+                Raw Hex:
+                    04 00 02 00 01 00 04 00
+                    03 00
+            padding = 00 00 00 00 00 00
+
+            Raw Hex:
+                02 00 0A 00 00 00 00 00
+                04 00 02 00 01 00 04 00
+                03 00 00 00 00 00 00 00,
+        SMB2NegotiateContextRequest:
+            context_type = (5) SMB2_NETNAME_NEGOTIATE_CONTEXT_ID
+            data_length = 22
+            reserved = 0
+            data =
+            SMB2NetnameNegotiateContextId:
+                net_name = 10.95.46.32
+
+                Raw Hex:
+                    31 00 30 00 2E 00 39 00
+                    35 00 2E 00 34 00 36 00
+                    2E 00 33 00 32 00
+            padding = 00 00
+
+            Raw Hex:
+                05 00 16 00 00 00 00 00
+                31 00 30 00 2E 00 39 00
+                35 00 2E 00 34 00 36 00
+                2E 00 33 00 32 00 00 00,
+        SMB2NegotiateContextRequest:
+            context_type = (8) SMB2_SIGNING_CAPABILITIES
+            data_length = 8
+            reserved = 0
+            data =
+            SMB2SigningCapabilities:
+                signing_algorithm_count = 3
+                signing_algorithms = [
+                    (2) AES_GMAC,
+                    (1) AES_CMAC,
+                    (0) HMAC_SHA256
+                ]
+
+                Raw Hex:
+                    03 00 02 00 01 00 00 00
+            padding = 
+
+            Raw Hex:
+                08 00 08 00 00 00 00 00
+                03 00 02 00 01 00 00 00
+    ]
+
+    Raw Hex:
+        24 00 05 00 02 00 00 00
+        45 00 00 00 7D 24 0B 80
+        E0 A4 42 0D 8A 6F AB A4
+        E8 00 99 C2 70 00 00 00
+        04 00 00 00 02 02 10 02
+        00 03 02 03 11 03 00 00
+        01 00 26 00 00 00 00 00
+        01 00 20 00 01 00 EA B6
+        39 00 A8 5C 65 86 2D 67
+        14 31 6E E0 EE AA D6 11
+        19 A9 3A 08 58 8D 13 8D
+        F4 D1 75 CD E1 24 00 00
+        02 00 0A 00 00 00 00 00
+        04 00 02 00 01 00 04 00
+        03 00 00 00 00 00 00 00
+        05 00 16 00 00 00 00 00
+        31 00 30 00 2E 00 39 00
+        35 00 2E 00 34 00 36 00
+        2E 00 33 00 32 00 00 00
+        08 00 08 00 00 00 00 00
+        03 00 02 00 01 00 00 00
+2024-12-11 15:12:08,502 - DEBUG - Socket recv() returned 4 bytes (total 4)
+2024-12-11 15:12:08,502 - DEBUG - Socket recv(308) (total 308)
+2024-12-11 15:12:08,503 - DEBUG - Socket recv() returned 308 bytes (total 308)
+2024-12-11 15:12:08,503 - DEBUG - Socket recv(4) (total 4)
+2024-12-11 15:12:08,503 - INFO - Receiving SMB2 Negotiate response
+2024-12-11 15:12:08,503 - DEBUG - SMB2HeaderResponse:
+    protocol_id = FE 53 4D 42
+    structure_size = 64
+    credit_charge = 0
+    status = (0) STATUS_SUCCESS
+    command = (0) SMB2_NEGOTIATE
+    credit_response = 1
+    flags = (1) SMB2_FLAGS_SERVER_TO_REDIR
+    next_command = 0
+    message_id = 0
+    reserved = 0
+    tree_id = 0
+    session_id = 0
+    signature = 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    data = 41 00 01 00 11 03 02 00 24 C9 CD 85 FD F4 35 4E B8 77 57 E8 37 88 0E 4D 07 00 00 00 00 00 80 00 00 00 80 00 00 00 80 00 52 A3 74 E6 C5 4B DB 01 00 00 00 00 00 00 00 00 80 00 78 00 F8 00 00 00 60 76 06 06 2B 06 01 05 05 02 A0 6C 30 6A A0 3C 30 3A 06 0A 2B 06 01 04 01 82 37 02 02 1E 06 09 2A 86 48 82 F7 12 01 02 02 06 09 2A 86 48 86 F7 12 01 02 02 06 0A 2A 86 48 86 F7 12 01 02 02 03 06 0A 2B 06 01 04 01 82 37 02 02 0A A3 2A 30 28 A0 26 1B 24 6E 6F 74 5F 64 65 66 69 6E 65 64 5F 69 6E 5F 52 46 43 34 31 37 38 40 70 6C 65 61 73 65 5F 69 67 6E 6F 72 65 01 00 26 00 00 00 00 00 01 00 20 00 01 00 E7 6B 57 EF 44 B2 FC 16 7C DC 66 C2 9D 8E BB 9F 69 A0 84 3D D2 DB 55 BE D1 26 C1 C3 A1 9A BC 00 00 00 02 00 04 00 00 00 00 00 01 00 02 00
+
+    Raw Hex:
+        FE 53 4D 42 40 00 00 00
+        00 00 00 00 00 00 01 00
+        01 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        41 00 01 00 11 03 02 00
+        24 C9 CD 85 FD F4 35 4E
+        B8 77 57 E8 37 88 0E 4D
+        07 00 00 00 00 00 80 00
+        00 00 80 00 00 00 80 00
+        52 A3 74 E6 C5 4B DB 01
+        00 00 00 00 00 00 00 00
+        80 00 78 00 F8 00 00 00
+        60 76 06 06 2B 06 01 05
+        05 02 A0 6C 30 6A A0 3C
+        30 3A 06 0A 2B 06 01 04
+        01 82 37 02 02 1E 06 09
+        2A 86 48 82 F7 12 01 02
+        02 06 09 2A 86 48 86 F7
+        12 01 02 02 06 0A 2A 86
+        48 86 F7 12 01 02 02 03
+        06 0A 2B 06 01 04 01 82
+        37 02 02 0A A3 2A 30 28
+        A0 26 1B 24 6E 6F 74 5F
+        64 65 66 69 6E 65 64 5F
+        69 6E 5F 52 46 43 34 31
+        37 38 40 70 6C 65 61 73
+        65 5F 69 67 6E 6F 72 65
+        01 00 26 00 00 00 00 00
+        01 00 20 00 01 00 E7 6B
+        57 EF 44 B2 FC 16 7C DC
+        66 C2 9D 8E BB 9F 69 A0
+        84 3D D2 DB 55 BE D1 26
+        C1 C3 A1 9A BC 00 00 00
+        02 00 04 00 00 00 00 00
+        01 00 02 00
+2024-12-11 15:12:08,505 - INFO - Negotiated dialect: (785) SMB_3_1_1
+2024-12-11 15:12:08,505 - INFO - Connection require signing: True
+2024-12-11 15:12:08,505 - INFO - Initialising session with username: int\sabx155
+2024-12-11 15:12:08,505 - DEBUG - Decoding SPNEGO token containing supported auth mechanisms
+2024-12-11 15:12:08,509 - DEBUG - SSPI step input: YHYGBisGAQUFAqBsMGqgPDA6BgorBgEEAYI3AgIeBgkqhkiC9xIBAgIGCSqGSIb3EgECAgYKKoZIhvcSAQICAwYKKwYBBAGCNwICCqMqMCigJhskbm90X2RlZmluZWRfaW5fUkZDNDE3OEBwbGVhc2VfaWdub3Jl
+2024-12-11 15:12:08,512 - DEBUG - SSPI step output: YEgGBisGAQUFAqA+MDygDjAMBgorBgEEAYI3AgIKoioEKE5UTE1TU1AAAQAAALeCCOIAAAAAAAAAAAAAAAAAAAAACgA5OAAAAA8=
+2024-12-11 15:12:08,512 - INFO - Sending SMB2_SESSION_SETUP request message
+2024-12-11 15:12:08,512 - INFO - Receiving SMB2_SESSION_SETUP response message
+2024-12-11 15:12:08,527 - DEBUG - Socket recv() returned 4 bytes (total 4)
+2024-12-11 15:12:08,527 - DEBUG - Socket recv(351) (total 351)
+2024-12-11 15:12:08,528 - DEBUG - Socket recv() returned 351 bytes (total 351)
+2024-12-11 15:12:08,528 - DEBUG - Socket recv(4) (total 4)
+2024-12-11 15:12:08,528 - INFO - More processing is required for SMB2_SESSION_SETUP
+2024-12-11 15:12:08,528 - DEBUG - SSPI step input: oYIBEzCCAQ+gAwoBAaEMBgorBgEEAYI3AgIKooH5BIH2TlRMTVNTUAACAAAABgAGADgAAAA1goniw1OtB6q0NzYAAAAAAAAAALgAuAA+AAAACgBjRQAAAA9JAE4AVAACAAYASQBOAFQAAQAcAFIAVQBNAE8AVwBLADEAMAAyADEAMQBTAFIAVgAEABwAaQBuAHQALgBhAHQAbwBzAGIAbwB4AC4AcgB1AAMAOgBSAFUATQBPAFcASwAxADAAMgAxADEAUwBSAFYALgBpAG4AdAAuAGEAdABvAHMAYgBvAHgALgByAHUABQAcAGkAbgB0AC4AYQB0AG8AcwBiAG8AeAAuAHIAdQAHAAgA0Wd55sVL2wEAAAAA
+2024-12-11 15:12:08,529 - DEBUG - SSPI step output: oYICJzCCAiOgAwoBAaKCAgYEggICTlRMTVNTUAADAAAAGAAYAH4AAABcAVwBlgAAAAYABgBYAAAADgAOAF4AAAASABIAbAAAABAAEADyAQAANYKI4goAOTgAAAAPmumvcnG+er9fUq1f20ic52kAbgB0AHMAYQBiAHgAMQA1ADUAQQBCAFgAUwBSAFYAMAA2ADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPCMw4j2DH81GPEIhetiggEBAAAAAAAA0Wd55sVL2wE4DvB34enqqwAAAAACAAYASQBOAFQAAQAcAFIAVQBNAE8AVwBLADEAMAAyADEAMQBTAFIAVgAEABwAaQBuAHQALgBhAHQAbwBzAGIAbwB4AC4AcgB1AAMAOgBSAFUATQBPAFcASwAxADAAMgAxADEAUwBSAFYALgBpAG4AdAAuAGEAdABvAHMAYgBvAHgALgByAHUABQAcAGkAbgB0AC4AYQB0AG8AcwBiAG8AeAAuAHIAdQAHAAgA0Wd55sVL2wEGAAQAAgAAAAgAMAAwAAAAAAAAAAAAAAAAMAAAaqM4gOkbhxl9rFlI2kjVPBMvijLTR2iK4x6c3L+2xUYKABAAAAAAAAAAAAAAAAAAAAAAAAkAIABjAGkAZgBzAC8AMQAwAC4AOQA1AC4ANAA2AC4AMwAyAAAAAAAAAAAApxY34NbqvU77qHJp6Yg926MSBBABAAAAWr2urnyExhQAAAAA
+2024-12-11 15:12:08,529 - INFO - Sending SMB2_SESSION_SETUP request message
+2024-12-11 15:12:08,530 - INFO - Receiving SMB2_SESSION_SETUP response message
+2024-12-11 15:12:08,584 - DEBUG - Socket recv() returned 4 bytes (total 4)
+2024-12-11 15:12:08,585 - DEBUG - Socket recv(72) (total 72)
+2024-12-11 15:12:08,585 - DEBUG - Socket recv() returned 72 bytes (total 72)
+2024-12-11 15:12:08,585 - DEBUG - Socket recv(4) (total 4)
+2024-12-11 15:12:08,586 - ERROR - Error copying act: Received unexpected status from the server: The attempted logon is invalid. This is either due to a bad username or authentication information. (3221225581) STATUS_LOGON_FAILURE: 0xc000006d
+2024-12-11 15:12:08,588 - ERROR - Error occurred: Received unexpected status from the server: The attempted logon is invalid. This is either due to a bad username or authentication information. (3221225581) STATUS_LOGON_FAILURE: 0xc000006d
+2024-12-11 15:12:08,588 - ERROR - Input arguments: ['sign.py', 'Martynov Vitaly', '00010812', '\u0412\u0435\u043d\u0442\u0440\u0430', 'receveing', 'REQ0010071', 'yes', '168503504296103710', '\u0412\u043e\u0440\u043e\u043d\u0435\u0436']
+2024-12-11 15:12:08,588 - INFO - Disconnecting transport connection
+2024-12-11 15:12:08,588 - INFO - Disconnecting DirectTcp socket
+2024-12-11 15:12:08,604 - DEBUG - Socket recv() returned 0 bytes (total 4)
+2024-12-11 15:14:04,308 - INFO - Script started with arguments: ['sign.py', 'Martynov Vitaly ', '00010812', '\u0412\u0435\u043d\u0442\u0440\u0430', 'receveing', 'REQ0010071', 'yes', '168503393298656156', '\u0412\u043e\u0440\u043e\u043d\u0435\u0436']
+2024-12-11 15:14:04,309 - DEBUG - Employee data initialized: {'fio': 'Martynov Vitaly ', 'number': '00010812', 'job_title': '\u0412\u0435\u043d\u0442\u0440\u0430', 'type_sign': 'receveing', 'request': 'REQ0010071', 'warehouse': 'yes', 'equipment': '168503393298656156', 'location': '\u0412\u043e\u0440\u043e\u043d\u0435\u0436', 'folder': 'REQ0010071'}
+2024-12-11 15:14:04,309 - DEBUG - Input file path: C:\Users\administrator\PycharmProjects\pythonProject\template\REQ0010071\168503393298656156.pdf
+2024-12-11 15:14:04,321 - DEBUG - Processing warehouse case
+2024-12-11 15:14:04,423 - DEBUG - PDF form processed and saved
+2024-12-11 15:14:04,423 - DEBUG - Creating stamp
+2024-12-11 15:14:04,515 - DEBUG - STREAM b'IHDR' 16 13
+2024-12-11 15:14:04,515 - DEBUG - STREAM b'IDAT' 41 6274
+2024-12-11 15:14:04,526 - DEBUG - Signing document
+2024-12-11 15:14:04,648 - DEBUG - Processing receiving type act
+2024-12-11 15:14:04,682 - INFO - Initialising connection, guid: 11ada901-d6ac-4293-83fb-3f1ef82ebca5, require_signing: True, server_name: 10.95.46.32, port: 445
+2024-12-11 15:14:04,683 - INFO - Setting up transport connection
+2024-12-11 15:14:04,683 - INFO - Connecting to DirectTcp socket
+2024-12-11 15:14:04,729 - DEBUG - Socket recv(4) (total 4)
+2024-12-11 15:14:04,729 - INFO - Starting negotiation with SMB server
+2024-12-11 15:14:04,729 - INFO - Negotiating with SMB2 protocol with highest client dialect of: SMB_3_1_1
+2024-12-11 15:14:04,730 - DEBUG - Adding client guid 11ada901-d6ac-4293-83fb-3f1ef82ebca5 to negotiate request
+2024-12-11 15:14:04,730 - DEBUG - Adding client capabilities 69 to negotiate request
+2024-12-11 15:14:04,730 - DEBUG - Adding preauth integrity capabilities of hash SHA512 and salt b'\x9a\x0evk\x91h]\xc4\xfb\x1f\xdb\xb7\xa93~\x87:\x1a`Vq\xe1\x8et\x9b\xd9\x1f\x11V\xf7\xa1T' to negotiate request
+2024-12-11 15:14:04,730 - DEBUG - Adding encryption capabilities of AES128|256 GCM and AES128|256 CCM to negotiate request
+2024-12-11 15:14:04,730 - DEBUG - Adding netname context id of 10.95.46.32 to negotiate request
+2024-12-11 15:14:04,731 - DEBUG - Adding signing algorithms AES_GMAC, AES_CMAC, and HMAC_SHA256 to negotiate request
+2024-12-11 15:14:04,733 - INFO - Sending SMB2 Negotiate message
+2024-12-11 15:14:04,733 - DEBUG - SMB3NegotiateRequest:
+    structure_size = 36
+    dialect_count = 5
+    security_mode = (2) SMB2_NEGOTIATE_SIGNING_REQUIRED
+    reserved = 0
+    capabilities = (69) SMB2_GLOBAL_CAP_DFS, SMB2_GLOBAL_CAP_ENCRYPTION, SMB2_GLOBAL_CAP_LARGE_MTU
+    client_guid = 11ada901-d6ac-4293-83fb-3f1ef82ebca5
+    negotiate_context_offset = 112
+    negotiate_context_count = 4
+    reserved2 = 0
+    dialects = [
+        (514) SMB_2_0_2,
+        (528) SMB_2_1_0,
+        (768) SMB_3_0_0,
+        (770) SMB_3_0_2,
+        (785) SMB_3_1_1
+    ]
+    padding = 00 00
+    negotiate_context_list = [
+        SMB2NegotiateContextRequest:
+            context_type = (1) SMB2_PREAUTH_INTEGRITY_CAPABILITIES
+            data_length = 38
+            reserved = 0
+            data =
+            SMB2PreauthIntegrityCapabilities:
+                hash_algorithm_count = 1
+                salt_length = 32
+                hash_algorithms = [
+                    (1) SHA_512
+                ]
+                salt = 9A 0E 76 6B 91 68 5D C4 FB 1F DB B7 A9 33 7E 87 3A 1A 60 56 71 E1 8E 74 9B D9 1F 11 56 F7 A1 54
+
+                Raw Hex:
+                    01 00 20 00 01 00 9A 0E
+                    76 6B 91 68 5D C4 FB 1F
+                    DB B7 A9 33 7E 87 3A 1A
+                    60 56 71 E1 8E 74 9B D9
+                    1F 11 56 F7 A1 54
+            padding = 00 00
+
+            Raw Hex:
+                01 00 26 00 00 00 00 00
+                01 00 20 00 01 00 9A 0E
+                76 6B 91 68 5D C4 FB 1F
+                DB B7 A9 33 7E 87 3A 1A
+                60 56 71 E1 8E 74 9B D9
+                1F 11 56 F7 A1 54 00 00,
+        SMB2NegotiateContextRequest:
+            context_type = (2) SMB2_ENCRYPTION_CAPABILITIES
+            data_length = 10
+            reserved = 0
+            data =
+            SMB2EncryptionCapabilities:
+                cipher_count = 4
+                ciphers = [
+                    (2) AES_128_GCM,
+                    (1) AES_128_CCM,
+                    (4) AES_256_GCM,
+                    (3) AES_256_CCM
+                ]
+
+                Raw Hex:
+                    04 00 02 00 01 00 04 00
+                    03 00
+            padding = 00 00 00 00 00 00
+
+            Raw Hex:
+                02 00 0A 00 00 00 00 00
+                04 00 02 00 01 00 04 00
+                03 00 00 00 00 00 00 00,
+        SMB2NegotiateContextRequest:
+            context_type = (5) SMB2_NETNAME_NEGOTIATE_CONTEXT_ID
+            data_length = 22
+            reserved = 0
+            data =
+            SMB2NetnameNegotiateContextId:
+                net_name = 10.95.46.32
+
+                Raw Hex:
+                    31 00 30 00 2E 00 39 00
+                    35 00 2E 00 34 00 36 00
+                    2E 00 33 00 32 00
+            padding = 00 00
+
+            Raw Hex:
+                05 00 16 00 00 00 00 00
+                31 00 30 00 2E 00 39 00
+                35 00 2E 00 34 00 36 00
+                2E 00 33 00 32 00 00 00,
+        SMB2NegotiateContextRequest:
+            context_type = (8) SMB2_SIGNING_CAPABILITIES
+            data_length = 8
+            reserved = 0
+            data =
+            SMB2SigningCapabilities:
+                signing_algorithm_count = 3
+                signing_algorithms = [
+                    (2) AES_GMAC,
+                    (1) AES_CMAC,
+                    (0) HMAC_SHA256
+                ]
+
+                Raw Hex:
+                    03 00 02 00 01 00 00 00
+            padding = 
+
+            Raw Hex:
+                08 00 08 00 00 00 00 00
+                03 00 02 00 01 00 00 00
+    ]
+
+    Raw Hex:
+        24 00 05 00 02 00 00 00
+        45 00 00 00 11 AD A9 01
+        D6 AC 42 93 83 FB 3F 1E
+        F8 2E BC A5 70 00 00 00
+        04 00 00 00 02 02 10 02
+        00 03 02 03 11 03 00 00
+        01 00 26 00 00 00 00 00
+        01 00 20 00 01 00 9A 0E
+        76 6B 91 68 5D C4 FB 1F
+        DB B7 A9 33 7E 87 3A 1A
+        60 56 71 E1 8E 74 9B D9
+        1F 11 56 F7 A1 54 00 00
+        02 00 0A 00 00 00 00 00
+        04 00 02 00 01 00 04 00
+        03 00 00 00 00 00 00 00
+        05 00 16 00 00 00 00 00
+        31 00 30 00 2E 00 39 00
+        35 00 2E 00 34 00 36 00
+        2E 00 33 00 32 00 00 00
+        08 00 08 00 00 00 00 00
+        03 00 02 00 01 00 00 00
+2024-12-11 15:14:04,749 - DEBUG - Socket recv() returned 4 bytes (total 4)
+2024-12-11 15:14:04,750 - DEBUG - Socket recv(308) (total 308)
+2024-12-11 15:14:04,750 - DEBUG - Socket recv() returned 308 bytes (total 308)
+2024-12-11 15:14:04,750 - DEBUG - Socket recv(4) (total 4)
+2024-12-11 15:14:04,750 - INFO - Receiving SMB2 Negotiate response
+2024-12-11 15:14:04,750 - DEBUG - SMB2HeaderResponse:
+    protocol_id = FE 53 4D 42
+    structure_size = 64
+    credit_charge = 0
+    status = (0) STATUS_SUCCESS
+    command = (0) SMB2_NEGOTIATE
+    credit_response = 1
+    flags = (1) SMB2_FLAGS_SERVER_TO_REDIR
+    next_command = 0
+    message_id = 0
+    reserved = 0
+    tree_id = 0
+    session_id = 0
+    signature = 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    data = 41 00 01 00 11 03 02 00 24 C9 CD 85 FD F4 35 4E B8 77 57 E8 37 88 0E 4D 07 00 00 00 00 00 80 00 00 00 80 00 00 00 80 00 5C BE C0 2B C6 4B DB 01 00 00 00 00 00 00 00 00 80 00 78 00 F8 00 00 00 60 76 06 06 2B 06 01 05 05 02 A0 6C 30 6A A0 3C 30 3A 06 0A 2B 06 01 04 01 82 37 02 02 1E 06 09 2A 86 48 82 F7 12 01 02 02 06 09 2A 86 48 86 F7 12 01 02 02 06 0A 2A 86 48 86 F7 12 01 02 02 03 06 0A 2B 06 01 04 01 82 37 02 02 0A A3 2A 30 28 A0 26 1B 24 6E 6F 74 5F 64 65 66 69 6E 65 64 5F 69 6E 5F 52 46 43 34 31 37 38 40 70 6C 65 61 73 65 5F 69 67 6E 6F 72 65 01 00 26 00 00 00 00 00 01 00 20 00 01 00 3B F5 BB 58 A2 64 15 C7 5E 62 88 8B 57 0B B6 D3 93 0A 8D 95 59 1D 56 63 5B DA 46 1E 5C CE 48 E2 00 00 02 00 04 00 00 00 00 00 01 00 02 00
+
+    Raw Hex:
+        FE 53 4D 42 40 00 00 00
+        00 00 00 00 00 00 01 00
+        01 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        00 00 00 00 00 00 00 00
+        41 00 01 00 11 03 02 00
+        24 C9 CD 85 FD F4 35 4E
+        B8 77 57 E8 37 88 0E 4D
+        07 00 00 00 00 00 80 00
+        00 00 80 00 00 00 80 00
+        5C BE C0 2B C6 4B DB 01
+        00 00 00 00 00 00 00 00
+        80 00 78 00 F8 00 00 00
+        60 76 06 06 2B 06 01 05
+        05 02 A0 6C 30 6A A0 3C
+        30 3A 06 0A 2B 06 01 04
+        01 82 37 02 02 1E 06 09
+        2A 86 48 82 F7 12 01 02
+        02 06 09 2A 86 48 86 F7
+        12 01 02 02 06 0A 2A 86
+        48 86 F7 12 01 02 02 03
+        06 0A 2B 06 01 04 01 82
+        37 02 02 0A A3 2A 30 28
+        A0 26 1B 24 6E 6F 74 5F
+        64 65 66 69 6E 65 64 5F
+        69 6E 5F 52 46 43 34 31
+        37 38 40 70 6C 65 61 73
+        65 5F 69 67 6E 6F 72 65
+        01 00 26 00 00 00 00 00
+        01 00 20 00 01 00 3B F5
+        BB 58 A2 64 15 C7 5E 62
+        88 8B 57 0B B6 D3 93 0A
+        8D 95 59 1D 56 63 5B DA
+        46 1E 5C CE 48 E2 00 00
+        02 00 04 00 00 00 00 00
+        01 00 02 00
+2024-12-11 15:14:04,753 - INFO - Negotiated dialect: (785) SMB_3_1_1
+2024-12-11 15:14:04,753 - INFO - Connection require signing: True
+2024-12-11 15:14:04,753 - INFO - Initialising session with username: int\sabx155
+2024-12-11 15:14:04,753 - DEBUG - Decoding SPNEGO token containing supported auth mechanisms
+2024-12-11 15:14:04,755 - DEBUG - SSPI step input: YHYGBisGAQUFAqBsMGqgPDA6BgorBgEEAYI3AgIeBgkqhkiC9xIBAgIGCSqGSIb3EgECAgYKKoZIhvcSAQICAwYKKwYBBAGCNwICCqMqMCigJhskbm90X2RlZmluZWRfaW5fUkZDNDE3OEBwbGVhc2VfaWdub3Jl
+2024-12-11 15:14:04,757 - DEBUG - SSPI step output: YEgGBisGAQUFAqA+MDygDjAMBgorBgEEAYI3AgIKoioEKE5UTE1TU1AAAQAAALeCCOIAAAAAAAAAAAAAAAAAAAAACgA5OAAAAA8=
+2024-12-11 15:14:04,757 - INFO - Sending SMB2_SESSION_SETUP request message
+2024-12-11 15:14:04,757 - INFO - Receiving SMB2_SESSION_SETUP response message
+2024-12-11 15:14:04,770 - DEBUG - Socket recv() returned 4 bytes (total 4)
+2024-12-11 15:14:04,770 - DEBUG - Socket recv(351) (total 351)
+2024-12-11 15:14:04,770 - DEBUG - Socket recv() returned 351 bytes (total 351)
+2024-12-11 15:14:04,770 - DEBUG - Socket recv(4) (total 4)
+2024-12-11 15:14:04,770 - INFO - More processing is required for SMB2_SESSION_SETUP
+2024-12-11 15:14:04,770 - DEBUG - SSPI step input: oYIBEzCCAQ+gAwoBAaEMBgorBgEEAYI3AgIKooH5BIH2TlRMTVNTUAACAAAABgAGADgAAAA1gonixIPIpKTGgScAAAAAAAAAALgAuAA+AAAACgBjRQAAAA9JAE4AVAACAAYASQBOAFQAAQAcAFIAVQBNAE8AVwBLADEAMAAyADEAMQBTAFIAVgAEABwAaQBuAHQALgBhAHQAbwBzAGIAbwB4AC4AcgB1AAMAOgBSAFUATQBPAFcASwAxADAAMgAxADEAUwBSAFYALgBpAG4AdAAuAGEAdABvAHMAYgBvAHgALgByAHUABQAcAGkAbgB0AC4AYQB0AG8AcwBiAG8AeAAuAHIAdQAHAAgA1SDDK8ZL2wEAAAAA
+2024-12-11 15:14:04,771 - DEBUG - SSPI step output: oYICJzCCAiOgAwoBAaKCAgYEggICTlRMTVNTUAADAAAAGAAYAH4AAABcAVwBlgAAAAYABgBYAAAADgAOAF4AAAASABIAbAAAABAAEADyAQAANYKI4goAOTgAAAAPjJr8MCHzBSCPIs7TGtlFvGkAbgB0AHMAYQBiAHgAMQA1ADUAQQBCAFgAUwBSAFYAMAA2ADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9oofTWiTdIaX1pM0nGDgSQEBAAAAAAAA1SDDK8ZL2wHJus94+f3f1gAAAAACAAYASQBOAFQAAQAcAFIAVQBNAE8AVwBLADEAMAAyADEAMQBTAFIAVgAEABwAaQBuAHQALgBhAHQAbwBzAGIAbwB4AC4AcgB1AAMAOgBSAFUATQBPAFcASwAxADAAMgAxADEAUwBSAFYALgBpAG4AdAAuAGEAdABvAHMAYgBvAHgALgByAHUABQAcAGkAbgB0AC4AYQB0AG8AcwBiAG8AeAAuAHIAdQAHAAgA1SDDK8ZL2wEGAAQAAgAAAAgAMAAwAAAAAAAAAAAAAAAAMAAAaqM4gOkbhxl9rFlI2kjVPBMvijLTR2iK4x6c3L+2xUYKABAAAAAAAAAAAAAAAAAAAAAAAAkAIABjAGkAZgBzAC8AMQAwAC4AOQA1AC4ANAA2AC4AMwAyAAAAAAAAAAAAwcQD8wruJKCtuDcOlrOLTaMSBBABAAAA2gOVCJpZVQkAAAAA
+2024-12-11 15:14:04,771 - INFO - Sending SMB2_SESSION_SETUP request message
+2024-12-11 15:14:04,771 - INFO - Receiving SMB2_SESSION_SETUP response message
+2024-12-11 15:14:04,827 - DEBUG - Socket recv() returned 4 bytes (total 4)
+2024-12-11 15:14:04,827 - DEBUG - Socket recv(72) (total 72)
+2024-12-11 15:14:04,827 - DEBUG - Socket recv() returned 72 bytes (total 72)
+2024-12-11 15:14:04,827 - DEBUG - Socket recv(4) (total 4)
+2024-12-11 15:14:04,828 - ERROR - Error copying act: Received unexpected status from the server: The attempted logon is invalid. This is either due to a bad username or authentication information. (3221225581) STATUS_LOGON_FAILURE: 0xc000006d
+2024-12-11 15:14:04,828 - ERROR - Error occurred: Received unexpected status from the server: The attempted logon is invalid. This is either due to a bad username or authentication information. (3221225581) STATUS_LOGON_FAILURE: 0xc000006d
+2024-12-11 15:14:04,828 - ERROR - Input arguments: ['sign.py', 'Martynov Vitaly ', '00010812', '\u0412\u0435\u043d\u0442\u0440\u0430', 'receveing', 'REQ0010071', 'yes', '168503393298656156', '\u0412\u043e\u0440\u043e\u043d\u0435\u0436']
+2024-12-11 15:14:04,829 - INFO - Disconnecting transport connection
+2024-12-11 15:14:04,829 - INFO - Disconnecting DirectTcp socket
+2024-12-11 15:14:04,842 - DEBUG - Socket recv() returned 0 bytes (total 4)
